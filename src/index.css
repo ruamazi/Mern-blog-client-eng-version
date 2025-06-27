@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+button {
+ cursor: pointer;
+}
+.btndisabled:disabled {
+ cursor: not-allowed !important;
+ background-color: gray !important;
+}
+
+.iframeStyle {
+ aspect-ratio: 16 / 9;
+ width: 100% !important;
+}
+
+@layer base {
+ body {
+  font-family: "Tajawal", "Roboto", serif;
+  font-optical-sizing: auto;
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-200;
+ }
+}
+@keyframes float {
+ 0%,
+ 100% {
+  transform: translateY(0);
+ }
+ 50% {
+  transform: translateY(-10px);
+ }
+}
+
+.animate-float {
+ animation: float 4s ease-in-out infinite;
+}
+
+/* Fade-in-up Animation */
+@keyframes fade-in-up {
+ 0% {
+  opacity: 0;
+  transform: translateY(20px);
+ }
+ 100% {
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
+
+/* Text Gradient Animation */
+@keyframes text-gradient {
+ 0% {
+  background-position: 0% 50%;
+ }
+ 50% {
+  background-position: 100% 50%;
+ }
+ 100% {
+  background-position: 0% 50%;
+ }
+}
+
+/* TipTap */
+.tiptap {
+ :first-child {
+  margin-top: 0;
+ }
+
+ /* Heading styles */
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+  line-height: 1.1;
+  margin-top: 2.5rem;
+  text-wrap: pretty;
+ }
+ h1,
+ h2 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+ }
+ h1 {
+  font-size: 1.8rem;
+ }
+ h2 {
+  font-size: 1.5rem;
+ }
+ h3 {
+  font-size: 1.3rem;
+ }
+ h4,
+ h5,
+ h6 {
+  font-size: 1rem;
+ }
+
+ /* List styles */
+ ul {
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 1.25rem 0.4rem;
+  list-style-type: circle;
+
+  li p {
+   margin-top: 0.25em;
+   margin-bottom: 0.25em;
+  }
+ }
+ ol {
+  padding: 0 1rem;
+  margin: 1.25rem 1rem 1.25rem 0.4rem;
+  list-style-type: decimal;
+
+  li p {
+   margin-top: 0.25em;
+   margin-bottom: 0.25em;
+  }
+ }
+}
+
+.editor-content img {
+ width: 100%;
+ max-width: 640px;
+ min-width: auto;
+ height: auto;
+ display: block;
+ margin: 0 auto;
+}
+
+.editor-content iframe {
+ width: 100%;
+ aspect-ratio: 16/9;
+ min-width: auto;
+ max-width: 840px;
+ height: auto;
+ display: block;
+ margin: 0 auto;
+}
